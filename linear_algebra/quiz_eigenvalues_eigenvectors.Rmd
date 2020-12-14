@@ -1,0 +1,94 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.7.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Quiz - Eigenvalues and Eigenvectors
+
+## Imports
+
+```{python}
+import numpy as np
+import numpy.linalg as la
+
+
+np.set_printoptions(precision=3, suppress=True)
+```
+
+## Helper Function
+
+```{python}
+def print_eigen(M):
+    """Print the eigenvalues and eigenvectors of a square matrix M."""
+
+    # Compute the eigenvalues and eigenvectors of M:
+    eigenvals, eigenvecs = la.eig(M)
+
+    # Reorganize (in descending order) the eigenvalues and eigenvectors
+    # according to the magnitude of the eigenvalues:
+    order = np.absolute(eigenvals).argsort()[::-1]
+    eigenvals = eigenvals[order]
+    eigenvecs = eigenvecs[:, order]
+
+    # Print every eigenvalue and the corresponding eigenvector:
+    for i in range(len(eigenvals)):
+        print(f'\nEigenvalue {i + 1}:  {eigenvals[i]:.3E}')
+        print(f'Eigenvector {i + 1}: {eigenvecs[:, i]}\n')
+```
+
+## Question 2
+
+```{python}
+L = np.array([[0, 0, 0, 1],
+              [1, 0, 0, 0],
+              [0, 1, 0, 0],
+              [0, 0, 1, 0]])
+print_eigen(L)
+```
+
+## Question 3
+
+```{python}
+L = np.array([[0.1, 0.1, 0.1, 0.7],
+              [0.7, 0.1, 0.1, 0.1],
+              [0.1, 0.7, 0.1, 0.1],
+              [0.1, 0.1, 0.7, 0.1]])
+print_eigen(L)
+```
+
+## Question 4
+
+```{python}
+L = np.array([[0, 1, 0, 0],
+              [1, 0, 0, 0],
+              [0, 0, 0, 1],
+              [0, 0, 1, 0]])
+print_eigen(L)
+
+print(f'Determinant of L: {la.det(L)}\n')
+```
+
+## Question 5
+
+```{python}
+# Number of websites:
+num_sites = 4
+
+# Damping parameter:
+d = 0.6
+
+# Damped matrix:
+M = d * L + (1 - d) / num_sites
+
+print_eigen(M)
+```
