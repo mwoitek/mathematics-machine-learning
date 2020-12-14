@@ -9,7 +9,7 @@ the solutions to the following assignments:
 * Part 1: Linear Algebra
     1. [Identifying Special Matrices](https://github.com/mwoitek/mathematics-machine-learning/blob/master/linear_algebra/IdentifyingSpecialMatrices_coursera.ipynb)
     1. [Gram-Schmidt Process](https://github.com/mwoitek/mathematics-machine-learning/blob/master/linear_algebra/GramSchmidtProcess_coursera.ipynb)
-    1. Reflecting Bear
+    1. [Reflecting Bear](https://github.com/mwoitek/mathematics-machine-learning/blob/master/linear_algebra/ReflectingBear_coursera.ipynb)
     1. [Page Rank](https://github.com/mwoitek/mathematics-machine-learning/blob/master/linear_algebra/PageRank_coursera.ipynb)
 * Part 2: Multivariate Calculus
     1. [Backpropagation](https://github.com/mwoitek/mathematics-machine-learning/blob/master/multivariate_calculus/Backpropagation_coursera.ipynb)
